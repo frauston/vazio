@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vazio, apenas vazio</title>
+    <link rel="stylesheet" href="style.css">
+    <audio id="bgMusic" loop>
+        <source src="audio/lacrimosa.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        let musicStarted = false;
+        const bgMusic = document.getElementById('bgMusic');
+        document.addEventListener('click', () => {
+            if(!musicStarted) {
+                bgMusic.play()
+                    .then(() => {
+                        musicStarted = true;
+                        bgMusic.loop = true;
+                    })
+                    .catch(error => {
+                        console.log('Erro ao iniciar música:', error);
+                    });
+            }
+        });
+        document.body.style.cursor = 'pointer';
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>“Esse mundo chove, se o seu coração tiver problemas o céu ficara nublado, se você sofrer, sempre chovera muito facilmente... 
+            Eu me pergunto se você consegue entender o medo de ficar na chuva nesse mundo de solidão? ”</h1>
+        <br>
+        <h1>“Longo e árduo é o caminho que do inferno conduz a luz.” </h1>
+        <h5>Sou apenas um tolo :)</h5>
+    </div>
+
+</body>
+</html>
